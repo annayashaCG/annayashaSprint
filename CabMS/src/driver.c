@@ -21,7 +21,9 @@
 /******************************************************************************
 *
 *       Function Name   : driverMainMenu
+*
 *       Description     : Showing the menu in Driver Page
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -42,7 +44,9 @@ int driverMainMenu()
 /******************************************************************************
 *
 *       Function Name   : signUpDriver
+*
 *       Description     : This function use for Sing up the Driver
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -117,7 +121,9 @@ DRIVER* signUpDriver(DRIVER *head)
 /******************************************************************************
 *
 *       Function Name   : signInDriver
+*
 *       Description     : This function use for Sing in the Driver
+*
 *       Returns         : Success or Failure
 *
 *******************************************************************************/
@@ -144,7 +150,9 @@ int signInDriver(DRIVER *head)
 /******************************************************************************
 *
 *       Function Name   : findLRecDrv
+*
 *       Description     : Finding the record of driver
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -167,7 +175,9 @@ int findLRecDrv(DRIVER *head, char *lName, char *lPasswd)
 /******************************************************************************
 *
 *       Function Name   : dispDriver
+*
 *       Description     : Display the driver
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -198,7 +208,9 @@ void dispDriver(DRIVER *head)
 /******************************************************************************
 *
 *       Function Name   : updateDDetails
+*
 *       Description     : This function used to update the details of driver
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -281,7 +293,9 @@ int updateDDetails(DRIVER *head)
 /******************************************************************************
 *
 *       Function Name   : writeDriDetails
+*
 *       Description     : Writting driver details
+*
 *       Returns         : Success or Failure
 *
 *******************************************************************************/
@@ -311,7 +325,9 @@ int writeDriDetails(DRIVER* head)
 /******************************************************************************
 *
 *       Function Name   : loadDriDetails
+*
 *       Description     : Loading Driver details
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -376,7 +392,9 @@ DRIVER* loadDriDetails()
 /******************************************************************************
 *
 *       Function Name   : tokenizeDRIVER
+*
 *       Description     : Tokenize the data by comma
+*
 *       Returns         : Success 
 *
 *******************************************************************************/

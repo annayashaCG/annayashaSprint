@@ -17,7 +17,9 @@
 /******************************************************************************
 *
 *       Function Name   : mainMenu
+*
 *       Description     : Display the Main Menu
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -38,7 +40,9 @@ int mainMenu()
 /******************************************************************************
 *
 *       Function Name   : custMainMenu
+*
 *       Description     : Display the Customer Main Menu
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -58,7 +62,9 @@ int custMainMenu()
 /******************************************************************************
 *
 *       Function Name   : driverMenu
+*
 *       Description     : Display the Driver Menu
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -78,7 +84,9 @@ int driverMenu()
 /******************************************************************************
 *
 *       Function Name   : removeLeading
+*
 *       Description     : Removing the space
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -86,23 +94,20 @@ void removeLeading(char *str, char *str1)
 {
     int idx = 0, j, k = 0;
  
-    // Iterate String until last
-    // leading space character
+    // Iterate String until last leading space character
     while (str[idx] == ' ' || str[idx] == '\t' || str[idx] == '\n')
     {
         idx++;
     }
  
-    // Run a for loop from index until the original
-    // string ends and copy the content of str to str1
+    // Run a for loop from index until the original string ends and copy the content of str to str1
     for (j = idx; str[j] != '\0'; j++)
     {
         str1[k] = str[j];
         k++;
     }
  
-    // Insert a string terminating character
-    // at the end of new string
+    // Insert a string terminating character at the end of new string
     str1[k] = '\0';
  
 }
@@ -110,7 +115,9 @@ void removeLeading(char *str, char *str1)
 /******************************************************************************
 *
 *       Function Name   : removeTrailing
+*
 *       Description     : Removing the space
+*
 *       Returns         : Success 
 *
 *******************************************************************************/

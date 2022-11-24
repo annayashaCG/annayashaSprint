@@ -21,7 +21,9 @@
 /******************************************************************************
 *
 *       Function Name   : custMenu
+*
 *       Description     : Showing the menu in Customer Page 
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -43,7 +45,9 @@ int custMenu()
 /******************************************************************************
 *
 *       Function Name   : signUpCust
+*
 *       Description     : This function use for Sing up the customer
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -84,15 +88,15 @@ CUST * signUpCust(CUST *head)
 		tmpNode = tmpNode->next;
 	}
 
-	
-
 	return head;
 }
 
 /******************************************************************************
 *
 *       Function Name   : signInCust
+*
 *       Description     : This function use for Sing in the customer
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -107,10 +111,7 @@ int signInCust(CUST *head)
 	printf("\n\tPassword: ");
 	scanf("%s",lPasswd);
 
-	/*
-
-	logic to find user name exists
-	 */
+	/*	logic to find user name exists */
 
 	ret = findLRecCust(head, lName, lPasswd);
 	if(ret == 1)
@@ -124,8 +125,10 @@ int signInCust(CUST *head)
 /******************************************************************************
 *
 *       Function Name   : findLRecCust
+*
 *       Description     : Find the Customer
-*       Returns         : Success
+*  
+*		Returns         : Success
 *
 *******************************************************************************/
 int findLRecCust(CUST *head, char *lName, char *lPasswd)
@@ -147,8 +150,10 @@ int findLRecCust(CUST *head, char *lName, char *lPasswd)
 /******************************************************************************
 *
 *       Function Name   : dispCust
-*       Description     : Display the customer
-*       Returns         : Success 
+*     
+*		Description     : Display the customer
+*
+*		Returns         : Success 
 *
 *******************************************************************************/
 void dispCust(CUST *head)
@@ -162,9 +167,11 @@ void dispCust(CUST *head)
 
 /******************************************************************************
 *
-*       Function Name   : writeCustDetails
-*       Description     : Writting Customer details
-*       Returns         : Success 
+*		Function Name   : writeCustDetails
+*       
+*		Description     : Writting Customer details
+*       
+*		Returns         : Success 
 *
 *******************************************************************************/
 int writeCustDetails(CUST* head)
@@ -193,7 +200,9 @@ int writeCustDetails(CUST* head)
 /******************************************************************************
 *
 *       Function Name   : loadCustDetails
+*
 *       Description     : Loading Customer details
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -204,9 +213,9 @@ CUST* loadCustDetails()
 	CUST *head = NULL;
 	CUST *cust; 
 	int _fSize = 0;
-	char tmpBuff[256] = {'\0', };
-	
-	fp = fopen("./data/CUST.dat","r+");
+	char tmpBuff[MAX] = {'\0', };
+
+	fp = fopen("./data/CUST.dat","r+"); /*Open the file*/
 	if(fp == NULL)
 	{
 		perror("\n\tfopen() ");
@@ -224,9 +233,9 @@ CUST* loadCustDetails()
 	else
 	{
 		fseek(fp, 0L, SEEK_SET);
-		memset(tmpBuff,'\0', 256);
+		memset(tmpBuff,'\0', MAX);
 		
-		while(fgets(tmpBuff, 256, fp)){
+		while(fgets(tmpBuff, MAX, fp)){
 			
 			if(head == NULL) /* first record */
 			{
@@ -259,7 +268,9 @@ CUST* loadCustDetails()
 /******************************************************************************
 *
 *       Function Name   : tokenizeCUST
+*
 *       Description     : Tokenise the data by comma
+*
 *       Returns         : Success 
 *
 *******************************************************************************/

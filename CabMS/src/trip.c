@@ -20,8 +20,10 @@
 
 /******************************************************************************
 *
-*       Function Name   : bookTrip
+*       Function Name   : bookTrip 
+*
 *       Description     : This function is for Booking Trip
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -72,7 +74,9 @@ TRIP * bookTrip(TRIP * head, int *bid)
 /******************************************************************************
 *
 *       Function Name   : printBook
+*
 *       Description     : Printing the Booking of Trip
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -136,7 +140,9 @@ void printBook(TRIP* thead, CUST* chead, DRIVER* dhead, int _tid)
 /******************************************************************************
 *
 *       Function Name   : dispTrip
+*
 *       Description     : Display the Trip Details
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -165,7 +171,9 @@ void dispTrip(TRIP *head)
 /******************************************************************************
 *
 *       Function Name   : markCompleteTrips
+*
 *       Description     : This function is for marking complete trip
+*
 *       Returns         : Success
 *
 *******************************************************************************/
@@ -202,7 +210,9 @@ int markCompleteTrips(TRIP *thead)
 /******************************************************************************
 *
 *       Function Name   : writeTripDetails
+*
 *       Description     : Writting the Trip Details
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -232,7 +242,9 @@ int writeTripDetails(TRIP* head)
 /******************************************************************************
 *
 *       Function Name   : loadTripDetails
+*
 *       Description     : Loading the Trip details
+*
 *       Returns         : Success 
 *
 *******************************************************************************/
@@ -298,7 +310,9 @@ TRIP* loadTripDetails()
 /******************************************************************************
 *
 *       Function Name   : tokenizeTRIP
+*
 *       Description     : Tokenize the details of Trip by comma
+*
 *       Returns         : Success
 *
 *******************************************************************************/
