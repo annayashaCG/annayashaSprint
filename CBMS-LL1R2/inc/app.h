@@ -1,5 +1,6 @@
 #ifndef APP_H
 #define APP_H
+#define MAX 1024
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -86,4 +87,5 @@ int bill();
 void cab_Details();
 //ST* scheduleTrip(ST *, int *);
 int isValidDate(struct tm dt);
+int update();
 #endif

@@ -8,7 +8,7 @@
 **  Revision History:
 **  DATE         NAME                REFERENCE          REASON
 **
-**  21-11-22    Polasu Teja Sri      New           Initial creation
+**  21-11-22    yamini talla           New           Initial creation
 **
 **  Copyright 2022, Altran Group All Rights Reserved
 **
@@ -201,7 +201,7 @@ DD* loadDD()
 	DD *head = NULL;
 	DD *dd; 
 	int _fSize = 0;
-	char tmpBuff[1024] = {'\0', };
+	char tmpBuff[MAX] = {'\0', };
 	
 	fp = fopen("./data/DD.dat","r");
 	if(fp == NULL)
@@ -220,9 +220,9 @@ DD* loadDD()
 	else
 	{
 		fseek(fp, 0L, SEEK_SET);
-		memset(tmpBuff,'\0', 1024);
+		memset(tmpBuff,'\0', MAX);
 		// head = newNode;
-		while(fgets(tmpBuff, 1024, fp)){
+		while(fgets(tmpBuff, MAX, fp)){
 			
 			if(head == NULL) /* first record */
 			{
@@ -260,7 +260,7 @@ CD* loadCD()
 	CD *head = NULL;
 	CD *cd; 
 	int _fSize = 0;
-	char tmpBuff[256] = {'\0', };
+	char tmpBuff[MAX] = {'\0', };
 	
 	fp = fopen("./data/CD.dat","r");
 	if(fp == NULL)
@@ -279,9 +279,9 @@ CD* loadCD()
 	else
 	{
 		fseek(fp, 0L, SEEK_SET);
-		memset(tmpBuff,'\0', 256);
+		memset(tmpBuff,'\0', MAX);
 		// head = newNode;
-		while(fgets(tmpBuff, 256, fp)){
+		while(fgets(tmpBuff, MAX, fp)){
 			
 			if(head == NULL) /* first record */
 			{
@@ -535,7 +535,7 @@ Customer_Car_Details* loadccD()
 	Customer_Car_Details *head = NULL;
 	Customer_Car_Details *ccd; 
 	int _fSize = 0;
-	char tmpBuff[256] = {'\0', };
+	char tmpBuff[MAX] = {'\0', };
 	
 	fp = fopen("./data/Customer_Car_Details.dat","r+");
 	if(fp == NULL)
@@ -554,9 +554,9 @@ Customer_Car_Details* loadccD()
 	else
 	{
 		fseek(fp, 0L, SEEK_SET);
-		memset(tmpBuff,'\0', 256);
+		memset(tmpBuff,'\0', MAX);
 		// head = newNode;
-		while(fgets(tmpBuff, 256, fp)){
+		while(fgets(tmpBuff, MAX, fp)){
 			
 			if(head == NULL) /* first record */
 			{
@@ -639,7 +639,7 @@ int tokenizeccd(Customer_Car_Details *ccd, char *tmpBuff)
 int cap(Customer_Car_Details *ccd)
 {
 	
-	int cost=0;
+	int cost=653;
 	int price=0;
 	FILE *fp = NULL;
 	fp = fopen("./data/Customer_Car_Details.dat","w+"); 
@@ -650,9 +650,9 @@ int cap(Customer_Car_Details *ccd)
 		printf("\n\tCapacity: ");
 		printf("%d",ccd->capacity);
 		
-		printf("\n\tEnter cost: ");
+		//printf("\n\tEnter cost: ");
 		//getchar();
-		scanf("%d",&cost);
+		//scanf("%d",&cost);
 		price = (ccd->capacity) * cost;
 		printf("\n\tcost is %d\n\t",price);
 		}
@@ -697,7 +697,13 @@ int updateDetails(DD *head)
 
 void checkBookedTrips(Customer_Car_Details *ccd)
 {
-       while(ccd != NULL){
+	char name[20];
+	printf("\n\tEnter your name :");
+	scanf("%s",name);
+        while(ccd != NULL)
+        {
+		if(strcmp(ccd->cust_name,name)==0)
+		{
                 printf("\n\tCapacity: ");
                 printf("%d",ccd->capacity);
                 printf("\tCustomer Name: ");
@@ -706,9 +712,10 @@ void checkBookedTrips(Customer_Car_Details *ccd)
                 printf("%s",ccd->pick);
                 printf("\tDrop off address: ");
                 printf("%s",ccd->drop);
-				printf("\tGender: ");
+	        printf("\tGender: ");
                 printf("%c",ccd->_gender);
-                ccd = ccd->next;
+		}
+		ccd = ccd->next;
       }
 	  
 }
@@ -726,8 +733,9 @@ int markCompleteTrips(Customer_Car_Details *ccd)
 		   		   //cap(ccd);
                    printf("\n\tEnter the amount of your customer:");
                    scanf("%d",&amt);
-				   printf("\n\tEnter 1 for payment:");
-				   scanf("%d",&a);
+		   printf("\nYour Amount is %d ",amt);
+		   printf("\n\tEnter 1 for completed the trip : ");
+		   scanf("%d",&a);
 				   if(a==1)
 				   {
                   		 printf("\n\tThe Trip is Completed\n");
@@ -800,7 +808,23 @@ void cab_Details()
          fclose(ptr);
 
 }
+int update()
+{
+	FILE *ft;
+	char name[20];
+	ft = fopen("./data/cab.txt", "r+");
+	if(ft==NULL)
+	{
+		printf("can not open target file\n");
+		exit(1);
+	}
+	printf("\n\t Enter name:");
+	scanf("%s",name);
+	fprintf(ft,"%s",name);
+	fclose(ft);
+	return 0;
 
+}
 /*
 int isValidDate(struct tm dt)
  {

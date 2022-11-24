@@ -52,55 +52,53 @@ int main()
                             printf("\n\t           *************************  Welcome  ************************   \n\t");
                             printf("\n\t                                    USER SCREEN                      \n\t");
                             printf("\n\t           ************************************************************    \n\t");
-                            printf("\n\tPress\n\t1. Schedule Trip\n\t2. Book Trip\n\t3. Check cab Driver Details\n\t4. Check cab Details\n\t5. Check Bill\n\t6. Make Payment\n\t0. Quit\n\tChoice: ");
+                            printf("\n\tPress\n\t1. Book Trip\n\t2. Check cab Driver Details\n\t3. Check cab Details\n\t4. Check Bill\n\t5. Make Payment\n\t0. Quit\n\tChoice: ");
+
                             scanf("%d",&ch);
                             switch(ch)
                             {
                                 case 1:
-                                    
-                                    //scheduleTrip();
-                                    sleep(1);
-                                    break;
-                                    //exit(EXIT_SUCCESS);
-                                case 2:
                                     headccd=bookTrip(headccd, &_id);
                                     writeccD(headccd);
                                     //bill(headccd);
                                     sleep(1);
                                     break;
-                                case 3:
+                                case 2:
                                     printf("\n\t Car details are:\n");
                                     dispDD(headdd,_id);
                                     printf("\n");
                                     sleep(1);
                                     break;
-                                case 4:
+                                case 3:
                                     printf("Cab Details");
                                     cab_Details();
                                     sleep(1);
                                     break;
-                                case 5:
+                                case 4:
                                 // bill();
                                     cap(headccd);
                                     printf("\n");
                                     sleep(1);
                                     break;
-                                case 6:
+                                case 5:
                                     makePayment();
                                     printf("\n");
                                     sleep(1);
                                     break;
                                 case 0:
-                                    printf("\n\tReturning back to Main Menu\n");
-                                   	break;
+                                      printf("\n\tReturning back to Main Menu\n");
+                                      break;
                                // exit(EXIT_SUCCESS);
                         
                                 default:
                                     printf("Incorrect Choice:");
                             }
-							ch=0;
-							break;
+			    ch = 0;
+			    break;
+
                         }
+                        //printf("\n\n");
+                        //return 0;
                     }
                     
                     sleep(2);
@@ -120,7 +118,7 @@ int main()
                             printf("\n\t           *************************  Welcome  ************************   \n\t");
                             printf("\n\t                                    CAB DRIVER SCREEN                      \n\t");
                             printf("\n\t           ************************************************************    \n\t");
-                            printf("\n\tPress\n\t1. Update Profile\n\t2. Manage Car dDetails\n\t3. Check Schedule Trip\n\t4. Check Book Trip\n\t5. Marked completed\n\t0. Quit\n\tChoice: ");
+                            printf("\n\tPress\n\t1. Update Profile\n\t2. Manage Car dDetails\n\t3. Check Book Trip\n\t4. Marked completed\n\t0. Quit\n\tChoice: ");
                             scanf("%d",&ch);
                             switch(ch)
                             {
@@ -132,12 +130,15 @@ int main()
                                     break;
                                 case 2:
                                     printf("\n\t Manage car details");
+				    update();
+				    sleep(1);
+				    break;
+                                
                                 case 3:
-                                case 4:
                                     checkBookedTrips(headccd);
                                     sleep(1);
                                     break;
-                                case 5:
+                                case 4:
                                     markCompleteTrips(headccd);
                                     sleep(1);
                                     break;
@@ -147,22 +148,27 @@ int main()
                                 default:
                                     printf("\nEnter correct choice\n");
                             }
-							ch=0;
-							break;
+			    ch =0;
+			    break;
 
                         }
+                        //printf("\n\n");
+	                   // return 0;
                     }
                     sleep(2);
                     break;
 
             case 0:
-				exit(EXIT_SUCCESS);
+		    printf("\n\t           *************************  THANK YOU  ************************   \n");
+                    exit(EXIT_SUCCESS);
+                    
+            default:
+                    printf("Incorrect Choice:");
+        }
+   
+    }
 
-			default:
-				printf("Incorrect Choice:");
-		}
-	}
-
+    
 	printf("\n\n");
 	return 0;
 }
