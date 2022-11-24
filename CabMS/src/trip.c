@@ -243,7 +243,7 @@ TRIP* loadTripDetails()
 	TRIP *head = NULL;
 	TRIP *trip; 
 	int _fSize = 0;
-	char tmpBuff[256] = {'\0', };
+	char tmpBuff[MAX] = {'\0', };
 	
 	fp = fopen("./data/TRIP.dat","r+");
 	if(fp == NULL)
@@ -263,9 +263,9 @@ TRIP* loadTripDetails()
 	else
 	{
 		fseek(fp, 0L, SEEK_SET);
-		memset(tmpBuff,'\0', 256);
+		memset(tmpBuff,'\0', MAX);
 		
-		while(fgets(tmpBuff, 256, fp)){
+		while(fgets(tmpBuff, MAX, fp)){
 			
 			if(head == NULL) /* first record */
 			{

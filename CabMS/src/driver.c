@@ -322,7 +322,7 @@ DRIVER* loadDriDetails()
 	DRIVER *head = NULL;
 	DRIVER *dri; 
 	int _fSize = 0;
-	char tmpBuff[256] = {'\0', };
+	char tmpBuff[MAX] = {'\0', };
 	
 	fp = fopen("./data/DRI.dat","r+");
 	if(fp == NULL)
@@ -341,8 +341,8 @@ DRIVER* loadDriDetails()
 	else
 	{
 		fseek(fp, 0L, SEEK_SET);
-		memset(tmpBuff,'\0', 256);
-		while(fgets(tmpBuff, 256, fp)){
+		memset(tmpBuff,'\0', MAX);
+		while(fgets(tmpBuff, MAX, fp)){
 			
 			if(head == NULL) /* first record */
 			{
