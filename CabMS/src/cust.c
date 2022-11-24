@@ -1,6 +1,30 @@
+/*************************************************************************
+*
+*  FILE NAME    : cust.c
+*
+*  DESCRIPTION  : Perform the function of Customer
+*
+*  DATE     	 NAME   	 REFERENCE          REASON
+*	
+*  24-NOV-2022  ANNAYASHA  		  New       Initial Creation.
+*
+*  Copyright 2010, Aricent Technologies (Holdings) Ltd
+*
+**************************************************************************/
+
+/*************************************************************************
+*                               HEADER FILES
+*************************************************************************/
 #include <common.h>
 #include <cust.h>
 
+/******************************************************************************
+*
+*       Function Name   : custMenu
+*       Description     : Showing the menu in Customer Page 
+*       Returns         : Success 
+*
+*******************************************************************************/
 int custMenu()
 {
 	int ch = 0;
@@ -16,6 +40,13 @@ int custMenu()
 	return ch;
 }
 
+/******************************************************************************
+*
+*       Function Name   : signUpCust
+*       Description     : This function use for Sing up the customer
+*       Returns         : Success 
+*
+*******************************************************************************/
 CUST * signUpCust(CUST *head)
 {
 	CUST *newNode = NULL;
@@ -58,6 +89,13 @@ CUST * signUpCust(CUST *head)
 	return head;
 }
 
+/******************************************************************************
+*
+*       Function Name   : signInCust
+*       Description     : This function use for Sing in the customer
+*       Returns         : Success 
+*
+*******************************************************************************/
 int signInCust(CUST *head)
 {
 	char lName[20], lPasswd[20];
@@ -83,7 +121,13 @@ int signInCust(CUST *head)
 	return ret;
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : findLRecCust
+*       Description     : Find the Customer
+*       Returns         : Success
+*
+*******************************************************************************/
 int findLRecCust(CUST *head, char *lName, char *lPasswd)
 {
 	int flag = 0;
@@ -100,7 +144,13 @@ int findLRecCust(CUST *head, char *lName, char *lPasswd)
 	return flag;	
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : dispCust
+*       Description     : Display the customer
+*       Returns         : Success 
+*
+*******************************************************************************/
 void dispCust(CUST *head)
 {
 	while(head != NULL)
@@ -110,6 +160,13 @@ void dispCust(CUST *head)
 	}
 }
 
+/******************************************************************************
+*
+*       Function Name   : writeCustDetails
+*       Description     : Writting Customer details
+*       Returns         : Success 
+*
+*******************************************************************************/
 int writeCustDetails(CUST* head)
 {
 	FILE *fp = NULL;
@@ -133,7 +190,13 @@ int writeCustDetails(CUST* head)
 	return 0;
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : loadCustDetails
+*       Description     : Loading Customer details
+*       Returns         : Success 
+*
+*******************************************************************************/
 CUST* loadCustDetails()
 {
 	FILE *fp = NULL;
@@ -193,7 +256,13 @@ CUST* loadCustDetails()
 	return head;
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : tokenizeCUST
+*       Description     : Tokenise the data by comma
+*       Returns         : Success 
+*
+*******************************************************************************/
 int tokenizeCUST(CUST *cust, char *tmpBuff)
 {
 	char *tokens;

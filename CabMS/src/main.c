@@ -1,8 +1,32 @@
+/*************************************************************************
+*
+*  FILE NAME    : main.c
+*
+*  DESCRIPTION  : Main method of the Program
+*
+*  DATE      		NAME   		 REFERENCE          REASON
+*
+*  24-NOV-2022      ANNAYASHA    	New			   Initial Creation.
+*
+*  Copyright 2010, Aricent Technologies (Holdings) Ltd
+*
+**************************************************************************/
+
+/*************************************************************************
+*                               HEADER FILES
+*************************************************************************/
 #include <common.h>
 #include <cust.h>
 #include <driver.h>
 #include <trip.h>
 
+/******************************************************************************
+*
+*       Function Name   : main
+*       Description     : Calling all the function in main method
+*       Returns         : Success 
+*
+*******************************************************************************/
 int main()
 {
 	int ch = 0, bid=0;

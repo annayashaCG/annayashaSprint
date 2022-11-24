@@ -1,10 +1,19 @@
+/***************************************************************************
+*                       MACROS
+***************************************************************************/
 #ifndef TRIP_H
 #define TRIP_H
 
+/***************************************************************************
+*                       HEADER FILES
+***************************************************************************/
 #include <common.h>
 #include <cust.h>
 #include <driver.h>
 
+/***************************************************************************
+*                       STRUCTURES
+***************************************************************************/
 typedef struct tripDetails
 {
 	int _tid;
@@ -19,7 +28,9 @@ typedef struct tripDetails
 	struct tripDetails *next;
 }TRIP;
 
-
+/***************************************************************************
+*                       LOCAL FUNCTIONS
+***************************************************************************/
 TRIP *bookTrip(TRIP *, int *);
 int checkDrv(TRIP *, DRIVER*, int);
 int checkCab(TRIP *, DRIVER*, int);
@@ -29,4 +40,6 @@ int markCompleteTrips(TRIP *);
 int writeTripDetails(TRIP* );
 TRIP* loadTripDetails();
 int tokenizeTRIP(TRIP *, char *);
+
 #endif
+/*END OF MACRO*/

@@ -1,6 +1,30 @@
+/*************************************************************************
+*
+*  FILE NAME    : driver.c
+*
+*  DESCRIPTION  : Perform the function of Driver
+*
+*  DATE     	 NAME  		  REFERENCE          REASON
+*
+*  24-NOV-2022  ANNAYASHA    	New       Initial Creation.
+*
+*  Copyright 2010, Aricent Technologies (Holdings) Ltd
+*
+**************************************************************************/
+
+/*************************************************************************
+*                               HEADER FILES
+*************************************************************************/
 #include <common.h>
 #include <driver.h>
 
+/******************************************************************************
+*
+*       Function Name   : driverMainMenu
+*       Description     : Showing the menu in Driver Page
+*       Returns         : Success 
+*
+*******************************************************************************/
 int driverMainMenu()
 {
 	int ch = 0;
@@ -15,6 +39,13 @@ int driverMainMenu()
 	return ch;
 }
 
+/******************************************************************************
+*
+*       Function Name   : signUpDriver
+*       Description     : This function use for Sing up the Driver
+*       Returns         : Success 
+*
+*******************************************************************************/
 DRIVER* signUpDriver(DRIVER *head)
 {
 	int ch;
@@ -83,7 +114,13 @@ DRIVER* signUpDriver(DRIVER *head)
 	return head;
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : signInDriver
+*       Description     : This function use for Sing in the Driver
+*       Returns         : Success or Failure
+*
+*******************************************************************************/
 int signInDriver(DRIVER *head)
 {
 	char lName[20], lPasswd[20];
@@ -104,6 +141,13 @@ int signInDriver(DRIVER *head)
 	return ret;
 }
 
+/******************************************************************************
+*
+*       Function Name   : findLRecDrv
+*       Description     : Finding the record of driver
+*       Returns         : Success 
+*
+*******************************************************************************/
 int findLRecDrv(DRIVER *head, char *lName, char *lPasswd)
 {
 	int flag = 0;
@@ -120,7 +164,13 @@ int findLRecDrv(DRIVER *head, char *lName, char *lPasswd)
 	return flag;	
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : dispDriver
+*       Description     : Display the driver
+*       Returns         : Success 
+*
+*******************************************************************************/
 void dispDriver(DRIVER *head)
 {
 	DRIVER _dd;
@@ -145,6 +195,13 @@ void dispDriver(DRIVER *head)
 	}
 }
 
+/******************************************************************************
+*
+*       Function Name   : updateDDetails
+*       Description     : This function used to update the details of driver
+*       Returns         : Success 
+*
+*******************************************************************************/
 int updateDDetails(DRIVER *head)
 {
 	//int _id;
@@ -221,7 +278,13 @@ int updateDDetails(DRIVER *head)
 	return 0;
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : writeDriDetails
+*       Description     : Writting driver details
+*       Returns         : Success or Failure
+*
+*******************************************************************************/
 int writeDriDetails(DRIVER* head)
 {
 	FILE *fp = NULL;
@@ -245,7 +308,13 @@ int writeDriDetails(DRIVER* head)
 	return 0;
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : loadDriDetails
+*       Description     : Loading Driver details
+*       Returns         : Success 
+*
+*******************************************************************************/
 DRIVER* loadDriDetails()
 {
 	FILE *fp = NULL;
@@ -304,6 +373,13 @@ DRIVER* loadDriDetails()
 }
 
 
+/******************************************************************************
+*
+*       Function Name   : tokenizeDRIVER
+*       Description     : Tokenize the data by comma
+*       Returns         : Success 
+*
+*******************************************************************************/
 int tokenizeDRIVER(DRIVER *dri, char *tmpBuff)
 {
 	char *tokens;

@@ -1,7 +1,30 @@
+/*************************************************************************
+*
+*  FILE NAME    : trip.c
+*
+*  DESCRIPTION  : Contents details of Trip
+*
+*  DATE     	 NAME   	 REFERENCE          REASON
+*
+*  24-NOV-2022  ANNAYASHA   	 New     Initial Creation.
+*
+*  Copyright 2010, Aricent Technologies (Holdings) Ltd
+*
+**************************************************************************/
+
+/*************************************************************************
+*                               HEADER FILES
+*************************************************************************/
 #include <common.h>
 #include <trip.h>
 
-
+/******************************************************************************
+*
+*       Function Name   : bookTrip
+*       Description     : This function is for Booking Trip
+*       Returns         : Success 
+*
+*******************************************************************************/
 TRIP * bookTrip(TRIP * head, int *bid)
 {
 	TRIP *newNode = NULL;
@@ -46,6 +69,13 @@ TRIP * bookTrip(TRIP * head, int *bid)
 	return head;
 }
 
+/******************************************************************************
+*
+*       Function Name   : printBook
+*       Description     : Printing the Booking of Trip
+*       Returns         : Success 
+*
+*******************************************************************************/
 void printBook(TRIP* thead, CUST* chead, DRIVER* dhead, int _tid)
 {
 	char cName[20], dName[20], cabType[20], cabRegNo[20];
@@ -103,7 +133,13 @@ void printBook(TRIP* thead, CUST* chead, DRIVER* dhead, int _tid)
 
 
 //int checkDrv(TRIP *, DRIVER*, int);
-
+/******************************************************************************
+*
+*       Function Name   : dispTrip
+*       Description     : Display the Trip Details
+*       Returns         : Success 
+*
+*******************************************************************************/
 void dispTrip(TRIP *head)
 {
 	TRIP _dd;
@@ -126,6 +162,13 @@ void dispTrip(TRIP *head)
 	}
 }
 
+/******************************************************************************
+*
+*       Function Name   : markCompleteTrips
+*       Description     : This function is for marking complete trip
+*       Returns         : Success
+*
+*******************************************************************************/
 int markCompleteTrips(TRIP *thead)
 {
     int choice;
@@ -145,7 +188,9 @@ int markCompleteTrips(TRIP *thead)
                  strcpy(tStatus, "Ongoing");
 			else
                  strcpy(tStatus,"Completed");
-             break;
+
+			printf("\nThe Trip is Completed\n");
+            break;
          case 2:
              exit(0);
          default:
@@ -154,7 +199,13 @@ int markCompleteTrips(TRIP *thead)
      return thead->status;
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : writeTripDetails
+*       Description     : Writting the Trip Details
+*       Returns         : Success 
+*
+*******************************************************************************/
 int writeTripDetails(TRIP* head)
 {
 	FILE *fp = NULL;
@@ -178,7 +229,13 @@ int writeTripDetails(TRIP* head)
 	return 0;
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : loadTripDetails
+*       Description     : Loading the Trip details
+*       Returns         : Success 
+*
+*******************************************************************************/
 TRIP* loadTripDetails()
 {
 	FILE *fp = NULL;
@@ -238,7 +295,13 @@ TRIP* loadTripDetails()
 	return head;
 }
 
-
+/******************************************************************************
+*
+*       Function Name   : tokenizeTRIP
+*       Description     : Tokenize the details of Trip by comma
+*       Returns         : Success
+*
+*******************************************************************************/
 int tokenizeTRIP(TRIP *trip, char *tmpBuff)
 {
 	char *tokens;
